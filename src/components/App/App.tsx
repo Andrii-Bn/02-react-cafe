@@ -4,6 +4,7 @@ import CafeInfo from "../CafeInfo/CafeInfo";
 import VoteOptions from "../VoteOptions/VoteOptions";
 import VoteStats from "../VoteStats/VoteStats";
 import Notification from "../Notification/Notification";
+import type { VoteType } from "../../types/votes";
 import type { Votes } from "../../types/votes";
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
     bad: 0,
   });
 
-  const incrementVote = (type: keyof Votes) => {
+  const incrementVote = (type: VoteType) => {
     setVotes((prevVotes) => ({
       ...prevVotes,
       [type]: prevVotes[type] + 1,
